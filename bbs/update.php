@@ -1,6 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+session_start();
+// ini_set('display_errors', 1);
+// error_reporting(E_ALL);
 
 //ここで画像の設定
 $tempfile = $_FILES['fname']['tmp_name'];
@@ -32,6 +33,7 @@ var_dump($age);
 
 //2. DB接続します
 include("funcs.php");
+sschk();
 $pdo = db_conn();
 
 //３．データ登録SQL作成

@@ -1,4 +1,6 @@
 <?php
+// session_start();
+
 // ini_set('display_errors', 1);
 // error_reporting(E_ALL);
 $title = '☆BBS☆';
@@ -6,6 +8,7 @@ $title = '☆BBS☆';
 //【重要】
 //insert.phpを修正（関数化）してからselect.phpを開く！！
 include("funcs.php");
+// sschk();
 $pdo = db_conn();
 
 //２．データ登録SQL作成
@@ -46,6 +49,8 @@ include("../tpl/head.php");
 <!-- Head[End] -->
 
 <!-- Main[Start] -->
+<?=$_SESSION["name"]?>さんこんにちは
+
 <div class="outer">
     <div class="container">
       <?php foreach($values as $v){ ?>
@@ -58,6 +63,7 @@ include("../tpl/head.php");
           <div class="btn_area">
             <a class="btn" href="detail.php?id=<?=h($v["id"])?>" target="_brank">更新</a>
             <a class="btn" href="delete.php?id=<?=h($v["id"])?>">削除</a>
+
           </div>
         </div>
       <?php } ?>

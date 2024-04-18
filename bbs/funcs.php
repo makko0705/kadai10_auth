@@ -7,7 +7,7 @@ function h($str){
 //DB接続関数：db_conn()
 function db_conn() {
     try {
-        $db_name = "gs_db3";    //データベース名
+        $db_name = "gs_gal_db";    //データベース名
         $db_id   = "root";      //アカウント名
         $db_pw   = "";          //パスワード：XAMPPはパスワード無し or MAMPはパスワード”root”に修正してください。
         $db_host = "localhost"; //DBホスト
@@ -33,7 +33,19 @@ function redirect($file_name) {
     exit();
 }
 
+//SessionCheck(スケルトン)
+function sschk(){
+    if(!isset($_SESSION["chk_ssid"]) || $_SESSION["chk_ssid"]!=session_id()){
+      //exit("Login Error");
+      redirect("login.php");
 
+   }else{
+      session_regenerate_id(true); //SESSION KEYを入れ替える
+      $_SESSION["chk_ssid"] = session_id();
+   }
+   
+  }
+  
 
 
 
