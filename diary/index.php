@@ -2,8 +2,6 @@
 // ini_set('display_errors', 1);
 // error_reporting(E_ALL);
 $title = '☆ブログを書くょ☆';
-
-
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +9,6 @@ $title = '☆ブログを書くょ☆';
 <?php
 include("../tpl/head.php");
 ?>
-
 <body class="bbs_index">
 
 <!-- Head[Start] -->
