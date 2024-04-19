@@ -27,7 +27,7 @@ sschk();
 <form method="post" action="user_insert.php">
   <div class="jumbotron">
    <fieldset>
-    <legend>ユーザー登録</legend>
+    <h1>ユーザー登録</h1>
      <label>名前：<input type="text" name="name"></label><br>
      <label>Login ID：<input type="text" name="lid"></label><br>
      <label>Login PW<input type="text" name="lpw"></label><br>

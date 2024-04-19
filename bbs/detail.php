@@ -49,7 +49,7 @@ $v =  $stmt->fetch(); //PDO::FETCH_ASSOC[カラム名のみで取得できるモ
 <!-- Main[Start] -->
 <div class="outer">
 <form method="post" action="update.php" enctype="multipart/form-data">
-  <legend>更新スるょ</legend>
+  <h1>更新スるょ</h1>
   <fieldset>
   <table>
     <tr>

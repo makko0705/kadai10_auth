@@ -30,7 +30,7 @@ include("../tpl/head.php");
 <!-- Main[Start] -->
 <div class="outer">
 <form action="insert.php" method="post" enctype="multipart/form-data">
-<legend>BBSﾀﾞﾖ☆</legend>
+<h1>BBSﾀﾞﾖ☆</h1>
 <table>
 <tr>
     <th>名前は?</th>
