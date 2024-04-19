@@ -15,3 +15,4 @@
   </nav>
 </header>
 <!-- Head[End] -->
+<p style="padding: 10px 20px 20px;"><?=$_SESSION["name"]?>さんこんにちは</p>

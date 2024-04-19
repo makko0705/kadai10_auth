@@ -46,6 +46,12 @@
                 <td><p><a href="bbs/select.php">ｹﾞｽﾌﾞってやつ♡</a></p></td>
             </tr>
             <tr>
+                <th>ﾌﾞﾛｸﾞ</th>
+            </tr>
+            <tr>
+                <td><p><a href="diary/select.php">会員制ﾌﾞﾛｸﾞだょ♡</a></p></td>
+            </tr>
+            <tr>
                 <th>持ってる資格</th>
             </tr>
             <tr>
