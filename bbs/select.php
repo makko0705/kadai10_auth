@@ -59,6 +59,7 @@ include("../tpl/head.php");
 <!-- Main[Start] -->
 
 <div class="outer">
+<h1><a href="index.php">投稿する</a></h1>
     <div class="container">
       <?php foreach($values as $v){ ?>
         <div class="chat_item">

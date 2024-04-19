@@ -11,15 +11,10 @@
 
 <body>
 <!-- Head[Start] -->
-<header>
-  <nav class="nav">
-    <ul>
-      <li><a class="btn header_link" href="./">プロフィール</a></li>
-      <li><a class="btn header_link" href="bbs/index.php">投稿する</a></li>
-      <li><a class="btn header_link" href="bbs/select.php">BBS</a></li>
-    </ul>
-  </nav>
-</header>
+<?php
+include("tpl/header.php");
+?>
+
 <!-- Head[End] -->
     <div class="outer">
         <div class="blog_head">

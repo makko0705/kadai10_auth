@@ -236,12 +236,8 @@ header {
   display: flex;
   justify-content: flex-end;
 }
-.nav li {
-  margin-bottom: 10px;
-}
 .nav .btn {
   display: block;
-  background: #fff;
   color: #e4007f;
   height: 30px;
   line-height: 30px;
@@ -249,4 +245,17 @@ header {
   width: inherit;
   margin: 0 5px;
   padding: 0 20px;
+}
+.nav .inner {
+  background: #fff;
+  color: #e4007f;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.nav .inner .btn {
+  background: #e4007f;
+  color: #fff;
+}
+.nav .inner h2 {
+  margin-bottom: 10px;
 }/*# sourceMappingURL=style.css.map */
