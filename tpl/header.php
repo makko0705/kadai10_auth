@@ -12,6 +12,10 @@
       <li><a class="btn header_link" href="index.php">投稿する</a></li>
       <li><a class="btn header_link" href="select.php">BBS</a></li>
     </ul>
+
+    <ul>
+      <li><a href="diary/select.php">ブログ</a></li>
+    </ul>
   </nav>
 </header>
 <!-- Head[End] -->

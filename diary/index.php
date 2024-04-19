@@ -4,13 +4,6 @@
 $title = '☆入力する☆';
 
 
-try{
-        if(is_uploaded_file($_FILES['file']['tmp_name'])){
-                move_uploaded_file($_FILES['file']['tmp_name'], './img/'.$_FILES['file']['name']);
-        }
-}catch(Exception $e) {
-        echo 'エラー:', $e->getMessage().PHP_EOL;
-}
 ?>
 
 <!DOCTYPE html>

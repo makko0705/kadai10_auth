@@ -12,7 +12,7 @@ sschk();
 $pdo = db_conn();
 
 //２．データ登録SQL作成
-$sql = "SELECT * FROM gs_an_table ORDER BY id DESC";
+$sql = "SELECT * FROM gs_diary_table ORDER BY id DESC";
 $stmt = $pdo->prepare($sql);
 $status = $stmt->execute();
 
@@ -27,22 +27,6 @@ if($status==false) {
 $values =  $stmt->fetchAll(PDO::FETCH_ASSOC); //PDO::FETCH_ASSOC[カラム名のみで取得できるモード]
 $json = json_encode($values,JSON_UNESCAPED_UNICODE);
 
-// //管理者かどうかを確認する
-// $sql_user = "SELECT * FROM gs_user_table ORDER BY id DESC";
-// $stmt_user = $pdo->prepare($sql_user);
-// $status_user = $stmt_user->execute();
-
-// $s_user =  $stmt_user->fetch(); //PDO::FETCH_ASSOC[カラム名のみで取得できるモード]
-// var_dump($s_user["lid"]);
-
-//画像の設定
-try{
-  if(is_uploaded_file($_FILES['file']['tmp_name'])){
-          move_uploaded_file($_FILES['file']['tmp_name'], './img/'.$_FILES['file']['name']);
-  }
-}catch(Exception $e) {
-  echo 'エラー:', $e->getMessage().PHP_EOL;
-}
 ?>
 
 <!DOCTYPE html>
@@ -62,11 +46,8 @@ include("../tpl/head.php");
     <div class="container">
       <?php foreach($values as $v){ ?>
         <div class="chat_item">
-          <p class="chat_head"><span class="id"><?=h($v["id"])?></span><span class="name"><?=h($v["name"])?></span><span class="address"><?=h($v["address"])?></span></p>
-          <div class="text"><?=h($v["naiyou"])?></div>
-          <?php if ( $v["filename"] !== 0 && $v["filename"] !== "./") {?>
-            <div class="image"><img src="<?=h($v["filename"])?>"></div>
-          <?php } ?>
+          <p class="chat_head"><span class="id"><?=h($v["id"])?></span><span class="name"><?=h($v["name"])?></span></p>
+          <div class="text"><?=h($v["diary"])?></div>
           <div class="btn_area">
             <a class="btn" href="detail.php?id=<?=h($v["id"])?>" target="_brank">更新</a>
 
