@@ -180,6 +180,10 @@ td {
   position: absolute;
   right: 10px;
 }
+.bbs_select .chat_head .indate {
+  position: absolute;
+  right: 10px;
+}
 .bbs_select .id {
   margin-right: 20px;
 }
@@ -207,7 +211,7 @@ td {
   text-decoration: none;
 }
 
-legend {
+h1 {
   margin-bottom: 10px;
 }
 
@@ -231,6 +235,9 @@ header {
 .nav ul {
   display: flex;
   justify-content: flex-end;
+}
+.nav li {
+  margin-bottom: 10px;
 }
 .nav .btn {
   display: block;

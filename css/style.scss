@@ -173,7 +173,12 @@ td {
         color: #fff;
         padding: 10px;
         position: relative;
+
         .address {
+            position: absolute;
+            right: 10px;
+        }
+        .indate {
             position: absolute;
             right: 10px;
         }
@@ -206,7 +211,7 @@ td {
         text-decoration: none;
     }
 }
-legend {
+h1 {
     margin-bottom: 10px;
 }
 input {
@@ -227,6 +232,9 @@ header {
     ul {
         display: flex;
         justify-content: flex-end;
+    }
+    li {
+        margin-bottom: 10px;
     }
     .btn {
         display: block;

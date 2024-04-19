@@ -44,9 +44,10 @@ include("../tpl/head.php");
 
 <div class="outer">
     <div class="container">
+      <h1><a href="index.php">ブログを書く</a></h1>
       <?php foreach($values as $v){ ?>
         <div class="chat_item">
-          <p class="chat_head"><span class="id"><?=h($v["id"])?></span><span class="name"><?=h($v["name"])?></span></p>
+          <p class="chat_head"><span class="id"><?=h($v["id"])?></span><span class="name"><?=h($_SESSION["name"])?></span><span class="indate"><?=h($v["indate"])?></span></p>
           <div class="text"><?=h($v["diary"])?></div>
           <div class="btn_area">
             <a class="btn" href="detail.php?id=<?=h($v["id"])?>" target="_brank">更新</a>

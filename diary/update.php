@@ -15,7 +15,7 @@ sschk();
 $pdo = db_conn();
 
 //３．データ登録SQL作成
-$sql = "UPDATE gs_an_table SET name=:name,diary=:diary WHERE id=:id";
+$sql = "UPDATE gs_diary_table SET name=:name,diary=:diary WHERE id=:id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':name',   $name,   PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':diary', $diary, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
