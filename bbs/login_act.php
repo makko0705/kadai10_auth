@@ -34,6 +34,7 @@ if($pw){
   $_SESSION["chk_ssid"]  = session_id();
   $_SESSION["kanri_flg"] = $val['kanri_flg'];
   $_SESSION["name"]      = $val['name'];
+  $_SESSION["id"]      = $val['id'];
   //Login成功時（select.phpへ）
   redirect("select.php");
 
