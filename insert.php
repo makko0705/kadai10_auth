@@ -6,6 +6,26 @@ error_reporting(E_ALL);
 //2. DB接続します
 include("funcs.php");
 $pdo = db_conn();
+
+//ここで画像の設定
+$tempfile = $_FILES['fname']['tmp_name'];
+$filename = './' . $_FILES['fname']['name'];
+
+if (is_uploaded_file($tempfile)) {
+
+    if ( move_uploaded_file($tempfile , $filename )) {
+        echo $filename."をアップロードしました。";
+        echo '<img src="';
+        echo $filename;
+        echo '">';
+    } else {
+        echo "ファイルをアップロードできません。";
+    }
+} else {
+    echo "ファイルが選択されていません。";
+} 
+
+
 $q1   = '';
 $q2   = '';
 $q3   = '';
@@ -128,13 +148,14 @@ $new_a2   = str_replace($target, $replace, $a2);
 $new_a3   = str_replace($target, $replace, $a3);
 
 //３．データ登録SQL作成
-$stmt = $pdo->prepare("INSERT INTO gs_profile_table(q1,q2,q3,a1,a2,a3)VALUES(:q1,:q2,:q3,:a1,:a2,:a3)");
+$stmt = $pdo->prepare("INSERT INTO gs_profile_table(q1,q2,q3,a1,a2,a3,filename)VALUES(:q1,:q2,:q3,:a1,:a2,:a3,:filename)");
 $stmt->bindValue(':q1',   $new_q1,   PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':q2',   $new_q2,   PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':q3',   $new_q3,   PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':a1',   $new_a1,   PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':a2',   $new_a2,   PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':a3',   $new_a3,   PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
+$stmt->bindValue(':filename', $filename, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
 // $stmt->bindValue(':name',   $new_name,   PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
 $status = $stmt->execute(); //実行
 

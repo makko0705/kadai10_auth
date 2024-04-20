@@ -1,13 +1,23 @@
+<?php
+// ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+$title = '☆プロフィール 入力する☆';
+
+
+try {
+    if (is_uploaded_file($_FILES['file']['tmp_name'])) {
+        move_uploaded_file($_FILES['file']['tmp_name'], './img/' . $_FILES['file']['name']);
+    }
+} catch (Exception $e) {
+    echo 'エラー:', $e->getMessage() . PHP_EOL;
+}
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
-    <meta charset="utf-8">
-    <title>プロフィール 登録</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" type="image/png" href="img/favicon.png">
-</head>
+<?php
+include("tpl/head.php");
+?>
 
 <body>
     <!-- Head[Start] -->
@@ -29,6 +39,12 @@
         <form action="insert.php" method="post" enctype="multipart/form-data">
             <table>
                 <tr>
+                    <th>プリクラ貼ってけ</th>
+                </tr>
+                <tr>
+                    <td><input type="file" name="fname"></td>
+                </tr>
+                <tr>
                     <th>
                         <select name="q1" id="pet-select">
                             <option value="">--質問を選んでﾈ☆--</option>
@@ -47,7 +63,7 @@
                 <tr>
                     <th>
                         <select name="q2" id="pet-select">
-                        <option value="">--質問を選んでﾈ☆--</option>
+                            <option value="">--質問を選んでﾈ☆--</option>
                             <option value="HN☆">HN☆</option>
                             <option value="ここだけの話">ここだけの話</option>
                             <option value="持ってる資格">持ってる資格</option>
@@ -63,7 +79,7 @@
                 <tr>
                     <th>
                         <select name="q3" id="pet-select">
-                        <option value="">--質問を選んでﾈ☆--</option>
+                            <option value="">--質問を選んでﾈ☆--</option>
                             <option value="HN☆">HN☆</option>
                             <option value="ここだけの話">ここだけの話</option>
                             <option value="持ってる資格">持ってる資格</option>

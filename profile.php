@@ -51,28 +51,31 @@ include("tpl/head.php");
       <?php } ?>
       <?php foreach ($values as $v) { ?>
         <div class="chat_item">
-        <div class="eyecatch">
-            <p><img src="img/eyecatch.png" alt=""></p>
-        </div>
           <table>
-          <tr>
-            <th><?= h($v["q1"]) ?></th>
-          </tr>
-          <tr>
-            <td><?= h($v["a1"]) ?></td>
-          </tr>
-          <tr>
-            <th><?= h($v["q2"]) ?></th>
-          </tr>
-          <tr>
-            <td><?= h($v["q2"]) ?></td>
-          </tr>
-          <tr>
-            <th><?= h($v["q3"]) ?></th>
-          </tr>
-          <tr>
-            <td><?= h($v["a3"]) ?></td>
-          </tr>
+            <tr>
+              <td> <?php if ($v["filename"] !== 0 && $v["filename"] !== "./") { ?>
+                  <div class="image"><img src="<?= h($v["filename"]) ?>"></div>
+                <?php } ?>
+              </td>
+            </tr>
+            <tr>
+              <th><?= h($v["q1"]) ?></th>
+            </tr>
+            <tr>
+              <td><?= h($v["a1"]) ?></td>
+            </tr>
+            <tr>
+              <th><?= h($v["q2"]) ?></th>
+            </tr>
+            <tr>
+              <td><?= h($v["q2"]) ?></td>
+            </tr>
+            <tr>
+              <th><?= h($v["q3"]) ?></th>
+            </tr>
+            <tr>
+              <td><?= h($v["a3"]) ?></td>
+            </tr>
           </table>
         </div>
       <?php } ?>

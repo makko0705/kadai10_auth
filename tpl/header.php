@@ -10,6 +10,7 @@
       <?php if($_SESSION["chk_ssid"]!=session_id()) {?>
       <li><a class="btn header_link" href="<?=$path?>bbs/login.php">ログイン</a></li>
       <?php } ?>
+        <li><a href="<?=$path?>bbs/user.php" class="btn header_link">会員登録</a></li>
         <li><a class="btn header_link" href="<?=$path?>profile.php">プロフィール</a></li>
         <li><a class="btn header_link" href="<?=$path?>bbs/index.php">投稿する</a></li>
         <li><a class="btn header_link" href="<?=$path?>bbs/select.php">BBS</a></li>
